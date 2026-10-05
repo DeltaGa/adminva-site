@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poil &amp; Patience — toilettage doux, Longueuil</title>
+<meta name="description" content="Poil & Patience, toilettage doux à Longueuil : un chien à la fois, bain, coupe, griffes, chiens anxieux bienvenus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: narrated visit (promise hero → the visit as numbered timeline → size price table → split hours/about → mosaic → contact card) · nav: floating pill · footer: minimal band · pre-emit critique: P4 H4 E4 S5 R4 V5 */
+:root{
+  --paper:oklch(97% 0.012 20);
+  --blush:oklch(91% 0.045 5);
+  --sky:oklch(93% 0.03 240);
+  --navy:oklch(27% 0.09 280);
+  --cocoa:oklch(26% 0.05 45);
+  --cocoa-soft:oklch(45% 0.04 45);
+  --line:oklch(86% 0.025 20);
+  --accent:oklch(72% 0.17 55);
+  --on-navy:oklch(96% 0.012 20);
+  --font-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-body:"Figtree",system-ui,sans-serif;
+  --font-num:"Fraunces",Georgia,serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --dur-long:420ms;
+  --r:22px;
+  --gutter:clamp(1.25rem,4vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--cocoa);font-family:var(--font-body);font-size:1.0625rem;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-style:normal;font-weight:800;line-height:1.02;letter-spacing:-.025em;margin:0;overflow-wrap:anywhere;min-width:0}
+.wrap{padding-inline:var(--gutter);max-width:76rem;margin-inline:auto}
+.pill{position:sticky;top:.75rem;z-index:20;margin:.75rem auto 0;width:max-content;max-width:calc(100% - 1.5rem);display:flex;align-items:center;gap:1.25rem;padding:.5rem .5rem .5rem 1.1rem;background:var(--paper);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 20px -12px oklch(26% 0.05 45 / .35)}
+.pill .brand{font-family:var(--font-display);font-weight:800;white-space:nowrap}
+.pill nav{display:flex;gap:1rem;font-size:.9375rem}
+.pill nav a{text-decoration:none;white-space:nowrap}
+.pill .tel{background:var(--navy);color:var(--on-navy);text-decoration:none;padding:.5rem .95rem;border-radius:999px;font-size:.9375rem;white-space:nowrap}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;padding-block:2.5rem 4rem}
+.hero h1{font-size:clamp(2.7rem,8.5vw,6.2rem)}
+.hero h1 .soft{font-weight:500;display:block}
+.hero p.lead{font-size:1.1875rem;max-width:40ch;margin:1.5rem 0 2rem}
+.hero .photo{position:relative;border-radius:var(--r);overflow:hidden;background:var(--blush)}
+.hero .photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.tag{display:inline-block;background:var(--blush);color:var(--cocoa);border-radius:999px;padding:.3rem .85rem;font-size:.875rem;font-weight:600;margin-bottom:1.25rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--on-navy);text-decoration:none;font-weight:600;padding:1rem 1.5rem;border-radius:999px;white-space:nowrap;transition:transform 120ms var(--ease-out)}
+.btn:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--cocoa);border:1.5px solid var(--cocoa)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+section{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.sec-title{font-size:clamp(2.1rem,5.5vw,3.8rem);max-width:16ch;margin-bottom:1rem}
+.sec-intro{max-width:52ch;margin:0 0 2.5rem;color:var(--cocoa-soft)}
+.visit{background:var(--sky)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.steps li{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:1rem;padding-block:1.4rem;border-top:1.5px solid oklch(26% 0.05 45 / .18)}
+.steps .n{font-family:var(--font-num);font-weight:600;font-size:2rem;line-height:1;color:var(--navy)}
+.steps h3{font-size:1.375rem;letter-spacing:-.01em;margin-bottom:.35rem}
+.steps p{margin:0;max-width:46ch}
+.anx{margin-top:2.5rem;background:var(--paper);border-radius:var(--r);padding:clamp(1.5rem,4vw,2.5rem);display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;align-items:center}
+.anx h3{font-size:clamp(1.6rem,3.5vw,2.2rem)}
+.anx p{margin:.5rem 0 0}
+.anx img{border-radius:calc(var(--r) - 8px);width:100%;aspect-ratio:1/1;object-fit:cover}
+.prices{width:100%;border-collapse:separate;border-spacing:0;font-size:1rem}
+.prices th,.prices td{padding:1rem .75rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.prices thead th{font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;color:var(--cocoa-soft);font-weight:600}
+.prices tbody th{font-family:var(--font-display);font-weight:800;font-size:1.125rem}
+.prices tbody th small{display:block;font-family:var(--font-body);font-weight:400;font-size:.8125rem;color:var(--cocoa-soft)}
+.prices td{white-space:nowrap;font-variant-numeric:tabular-nums}
+.table-scroll{overflow-x:auto;border-radius:var(--r);background:oklch(99% 0.006 20);border:1px solid var(--line)}
+.extras{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.extras span{border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;font-size:.9375rem;background:oklch(99% 0.006 20)}
+.small{font-size:.875rem;color:var(--cocoa-soft)}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem}
+.card{background:var(--blush);border-radius:var(--r);padding:clamp(1.5rem,4vw,2.5rem)}
+.card dl{margin:1rem 0 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem 1rem}
+.card dt{font-weight:600}
+.card dd{margin:0;white-space:nowrap;font-variant-numeric:tabular-nums}
+.about p{max-width:52ch}
+.mosaic{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:var(--r);aspect-ratio:3/2}
+.contact{background:var(--navy);color:var(--on-navy);border-radius:var(--r) var(--r) 0 0}
+.contact h2{font-size:clamp(2.3rem,6vw,4.2rem);max-width:14ch}
+.contact .phone{display:inline-block;font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,6.5vw,3.6rem);text-decoration:none;margin:1.25rem 0;white-space:nowrap}
+.contact .phone::after{content:"";display:block;height:4px;width:3rem;background:var(--accent);border-radius:4px;margin-top:.3rem}
+.contact p{margin:.25rem 0;opacity:.9}
+footer{background:var(--navy);color:var(--on-navy);padding:1.5rem 0 6rem;font-size:.75rem}
+footer p{margin:0;opacity:.7}
+.callbar{position:fixed;left:.75rem;right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));z-index:30;display:flex;gap:.5rem;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.4rem;box-shadow:0 10px 30px -12px oklch(26% 0.05 45 / .45)}
+.callbar a{flex:1;text-align:center;text-decoration:none;padding:.8rem .5rem;border-radius:999px;font-weight:600;font-size:.9375rem;white-space:nowrap}
+.callbar .call{background:var(--navy);color:var(--on-navy)}
+.reveal{opacity:0;transform:translateY(18px) scale(.985);animation:reveal var(--dur-long) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 100ms)}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transform:none;animation:fade 200ms linear forwards}@keyframes fade{to{opacity:1}}.btn{transition:none}}
+@media (max-width:720px){.pill nav{display:none}}
+@media (max-width:360px){.pill .brand{font-size:.9375rem}.pill{gap:.6rem}}
+@media (min-width:768px){
+  .hero{grid-template-columns:minmax(0,6fr) minmax(0,5fr);align-items:center;padding-top:4rem}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:3rem}
+  .anx{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+  .two{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}
+  .mosaic{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+  .callbar{display:none}
+  footer{padding-bottom:1.5rem}
+}
+.callbar{transition:transform 220ms var(--ease-out),opacity 220ms var(--ease-out)}
+.callbar.is-hidden{transform:translateY(calc(100% + 1.5rem));opacity:0;pointer-events:none}
+@media (max-width:767px){body{padding-bottom:calc(5.5rem + env(safe-area-inset-bottom))}footer{padding-bottom:1.5rem}}
+@media (max-width:430px){.actions{flex-direction:column;gap:.75rem}.actions .btn{width:100%;justify-content:center}.hero{padding-top:1.75rem}}
+@media (prefers-reduced-motion:reduce){.callbar{transition:opacity 150ms linear}}
+</style>
+</head>
+<body>
+<header class="pill" aria-label="Navigation">
+  <span class="brand">Poil &amp; Patience</span>
+  <nav><a href="#visite">La visite</a><a href="#prix">Prix</a><a href="#heures">Heures</a></nav>
+  <a class="tel" href="tel:+14505550177">Appeler</a>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div class="reveal" style="--i:0">
+    <span class="tag">Toilettage doux · Longueuil</span>
+    <h1>Un chien à la fois. <span class="soft">Personne ne se presse.</span></h1>
+    <p class="lead">Pas de cage, pas de file d'attente qui jappe. Votre chien a le salon pour lui seul, du bain jusqu'aux griffes.</p>
+    <div class="actions" data-hero-cta><a class="btn" href="tel:+14505550177">Réserver au 450-555-0177</a><a class="btn btn-ghost" href="#prix">Voir les prix</a></div>
+  </div>
+  <div class="photo reveal" style="--i:1"><img src="../photos/toilettage-hero.jpg" alt="Un chien calme et propre, assis après son toilettage" width="896" height="1120" fetchpriority="high"></div>
+</div>
+
+<section class="visit" id="visite">
+  <div class="wrap">
+    <h2 class="sec-title">Comment se passe la visite</h2>
+    <p class="sec-intro">Comptez de une heure et demie à trois heures selon la taille et le pelage. On vous texte quand c'est prêt.</p>
+    <ol class="steps">
+      <li><span class="n">1</span><div><h3>L'arrivée</h3><p>On se présente au chien avant de le toucher. Quelques minutes pour sentir les lieux, une gâterie s'il en veut.</p></div></li>
+      <li><span class="n">2</span><div><h3>Le bain</h3><p>Eau tiède, shampooing doux adapté au pelage, séchage à basse vitesse pour ne pas l'effrayer.</p></div></li>
+      <li><span class="n">3</span><div><h3>La coupe</h3><p>Aux ciseaux ou à la tondeuse, selon la race et vos consignes. Le visage et les pattes en dernier, tranquillement.</p></div></li>
+      <li><span class="n">4</span><div><h3>Les griffes</h3><p>Coupe et limage, nettoyage des oreilles. Pause dès que le chien en a besoin.</p></div></li>
+    </ol>
+    <div class="anx">
+      <div><h3>Votre chien a peur du toiletteur ?</h3><p>C'est pour lui qu'on travaille un chien à la fois. Pour les chiens anxieux, on propose une première visite courte : on fait connaissance, on fait un peu de bain, et on s'arrête là. Le reste viendra la fois suivante.</p></div>
+      <img src="../photos/toilettage-mains.jpg" alt="Mains de la toiletteuse brossant doucement un chien" width="1024" height="1024" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="prix">
+  <div class="wrap">
+    <h2 class="sec-title">Prix selon la taille</h2>
+    <p class="sec-intro">Prix de départ, taxes en sus. Un pelage très noué ou un chien qui demande plus de pauses peut prendre plus de temps ; on vous en parle avant.</p>
+    <div class="table-scroll">
+      <table class="prices">
+        <thead><tr><th scope="col">Taille</th><th scope="col">Bain et brossage</th><th scope="col">Toilettage complet</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Petit<small>moins de 10 kg</small></th><td>dès 55 $</td><td>dès 75 $</td></tr>
+          <tr><th scope="row">Moyen<small>10 à 25 kg</small></th><td>dès 70 $</td><td>dès 95 $</td></tr>
+          <tr><th scope="row">Grand<small>plus de 25 kg</small></th><td>dès 90 $</td><td>dès 125 $</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="extras"><span>Griffes seules · 20 $</span><span>Première visite courte · 35 $</span><span>Démêlage · selon le temps</span></div>
+    <p class="small">Prix indicatifs pour ce site exemple.</p>
+  </div>
+</section>
+
+<section id="heures">
+  <div class="wrap two">
+    <div class="card">
+      <h2 class="sec-title" style="margin:0">Heures</h2>
+      <dl>
+        <dt>Lundi</dt><dd>fermé</dd>
+        <dt>Mardi au vendredi</dt><dd>8 h – 16 h</dd>
+        <dt>Samedi</dt><dd>8 h – 13 h</dd>
+        <dt>Dimanche</dt><dd>fermé</dd>
+      </dl>
+      <p class="small" style="margin-top:1.25rem">Sur rendez-vous seulement, par téléphone.</p>
+    </div>
+    <div class="about">
+      <h2 class="sec-title">Un petit salon, exprès</h2>
+      <p>Poil &amp; Patience, c'est une seule table de toilettage et une seule personne à la fois pour votre chien. Le calme fait partie du service : moins de bruit, moins d'odeurs d'autres chiens, moins de stress.</p>
+      <p>On préfère prendre moins de rendez-vous et finir chaque toilettage sans brusquer personne.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Galerie" style="padding-top:0">
+  <div class="wrap mosaic">
+    <img src="../photos/toilettage-lieu.jpg" alt="Le salon de toilettage, lumineux, avec une seule table" width="1024" height="688" loading="lazy">
+    <img src="../photos/toilettage-mains.jpg" alt="Brossage d'un chien" width="1024" height="1024" loading="lazy">
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>On garde une place pour votre chien</h2>
+    <a class="phone" href="tel:+14505550177">450-555-0177</a>
+    <p>Longueuil (Québec) — adresse exacte à la prise de rendez-vous</p>
+    <p><a href="mailto:exemple@exemple.ca">exemple@exemple.ca</a></p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>Site exemple — entreprise fictive. Réalisé par Joram Smith · 438 407-3098</p></div></footer>
+
+<div class="callbar" aria-label="Actions rapides"><a class="call" href="tel:+14505550177">Appeler · 450-555-0177</a></div>
+<script>
+(function(){var bar=document.querySelector(".callbar"),cta=document.querySelector("[data-hero-cta]");if(!bar||!cta||!("IntersectionObserver" in window))return;bar.classList.add("is-hidden");new IntersectionObserver(function(e){var gone=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;bar.classList.toggle("is-hidden",!gone);bar.setAttribute("aria-hidden",gone?"false":"true");bar.querySelectorAll("a").forEach(function(a){a.tabIndex=gone?0:-1});}).observe(cta);})();
+</script>
+</body>
+</html>

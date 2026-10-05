@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Mèche — salon de coiffure, Boucherville</title>
+<meta name="description" content="Atelier Mèche, salon de coiffure à Boucherville : coupes, couleur, balayage et soins. Réservation par téléphone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Hanken+Grotesk:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: magazine spread (masthead wordmark → full-bleed cover → tarif index → split hours/about → strip gallery) · nav: masthead · footer: statement · pre-emit critique: P4 H4 E4 S4 R5 V4 */
+:root{
+  --paper:oklch(96.2% 0.008 85);
+  --paper-2:oklch(91.5% 0.012 85);
+  --line:oklch(84% 0.012 85);
+  --ink:oklch(20% 0.008 60);
+  --ink-soft:oklch(42% 0.01 60);
+  --accent:oklch(72% 0.13 40);
+  --accent-ink:oklch(50% 0.13 38);
+  --on-ink:oklch(96% 0.008 85);
+  --font-display:"Instrument Serif",Georgia,serif;
+  --font-body:"Hanken Grotesk",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --dur-long:420ms;
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-weight:400;font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;font-style:normal;line-height:1.02;margin:0;overflow-wrap:anywhere;min-width:0}
+.wrap{padding-inline:var(--gutter);max-width:90rem;margin-inline:auto}
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-block:1.1rem;border-bottom:1px solid var(--ink);font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase}
+.mast nav{display:flex;gap:1.5rem}
+.mast nav a{text-decoration:none;white-space:nowrap}
+.mast nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.mast .tel{font-family:var(--font-mono);text-transform:none;letter-spacing:0;white-space:nowrap}
+.word{font-size:clamp(4.2rem,19vw,17rem);letter-spacing:-.035em;line-height:.86;padding-block:clamp(1rem,3vw,2rem) .5rem}
+.word span{display:block}
+.cover{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;padding-bottom:clamp(3rem,7vw,6rem)}
+.cover figure{margin:0}
+.cover img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.cover .lede{display:flex;flex-direction:column;justify-content:space-between;gap:2rem}
+.lede p.big{font-family:var(--font-display);font-size:clamp(1.75rem,3.4vw,2.75rem);line-height:1.12;margin:0;max-width:22ch}
+.kicker{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 .75rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--ink);color:var(--on-ink);text-decoration:none;padding:.95rem 1.4rem;font-size:.9375rem;white-space:nowrap;border-radius:5px;transition:transform 120ms var(--ease-out)}
+.btn:hover{transform:translateY(-1px)}
+.btn .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--accent)}
+.meta-line{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;font-size:.875rem;color:var(--ink-soft);margin-top:1.25rem}
+section{padding-block:clamp(3.5rem,8vw,7rem);border-top:1px solid var(--line)}
+.head{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.head h2{font-size:clamp(2.6rem,7vw,5.5rem);letter-spacing:-.02em}
+.head p{margin:0;color:var(--ink-soft);max-width:44ch}
+.tarif{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.tarif li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 1rem;padding-block:1.1rem;border-bottom:1px solid var(--line)}
+.tarif h3{font-size:clamp(1.5rem,3vw,2.1rem)}
+.tarif .price{font-family:var(--font-mono);font-size:.9375rem;align-self:center;white-space:nowrap}
+.tarif p{grid-column:1/-1;margin:0;color:var(--ink-soft);font-size:.9375rem;max-width:60ch}
+.note{font-size:.8125rem;color:var(--ink-soft);margin-top:1.25rem}
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2.5rem,6vw,5rem)}
+.hours{border-collapse:collapse;width:100%;font-size:.9375rem}
+.hours th,.hours td{text-align:left;padding:.7rem 0;border-bottom:1px solid var(--line);font-weight:400}
+.hours td{font-family:var(--font-mono);text-align:right;white-space:nowrap}
+.hours tr.closed td{color:var(--ink-soft)}
+.about p{max-width:52ch;margin:0 0 1rem}
+.about figure{margin:2rem 0 0}
+.about img{width:100%;aspect-ratio:1/1;object-fit:cover}
+figcaption{font-size:.8125rem;color:var(--ink-soft);margin-top:.6rem}
+.strip{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+.strip img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2}
+.contact{background:var(--ink);color:var(--on-ink);border-top:0}
+.contact h2{font-size:clamp(2.8rem,9vw,7rem);letter-spacing:-.025em}
+.contact a.phone{font-family:var(--font-display);font-size:clamp(2.2rem,7vw,5rem);text-decoration:none;display:inline-block;margin-top:1rem;border-bottom:2px solid var(--accent);line-height:1.1;white-space:nowrap}
+.contact .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;margin-top:2.5rem;font-size:.9375rem}
+.contact .grid p{margin:0}
+.contact .label{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:.35rem}
+footer{background:var(--ink);color:var(--on-ink);padding-block:2rem 6rem;font-size:.75rem;opacity:.95;border-top:1px solid oklch(35% 0.008 60)}
+footer p{margin:0;opacity:.7}
+.callbar{position:fixed;inset:auto 0 0 0;z-index:10;display:flex;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--ink)}
+.callbar a{flex:1;text-align:center;text-decoration:none;padding:.8rem .5rem;font-size:.9375rem;white-space:nowrap;border-radius:5px}
+.callbar .call{background:var(--ink);color:var(--on-ink)}
+.callbar .where{border:1px solid var(--ink)}
+.reveal{opacity:0;transform:translateY(14px);animation:reveal var(--dur-long) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 90ms)}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{transform:none;animation:fade 200ms linear forwards}@keyframes fade{to{opacity:1}}.btn{transition:none}}
+@media (max-width:640px){.mast nav{display:none}.mast>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}}
+@media (min-width:768px){
+  .cover{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gutter)}
+  .head{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end}
+  .split{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+  .strip{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+  .strip img.tall{aspect-ratio:auto}
+  .contact .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .callbar{display:none}
+  footer{padding-bottom:2rem}
+}
+.callbar{transition:transform 220ms var(--ease-out),opacity 220ms var(--ease-out)}
+.callbar.is-hidden{transform:translateY(110%);opacity:0;pointer-events:none}
+@media (max-width:767px){body{padding-bottom:calc(4.5rem + env(safe-area-inset-bottom))}footer{padding-bottom:2rem}}
+@media (max-width:430px){.cover .btn{display:flex;width:100%;justify-content:center}.lede{gap:1.5rem}}
+@media (prefers-reduced-motion:reduce){.callbar{transition:opacity 150ms linear}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="mast">
+    <span>Boucherville · Salon de coiffure</span>
+    <nav aria-label="Sections"><a href="#tarifs">Tarifs</a><a href="#heures">Heures</a><a href="#atelier">L'atelier</a><a href="#contact">Contact</a></nav>
+    <a class="tel" href="tel:+14505550142">450-555-0142</a>
+  </div>
+  <h1 class="word reveal" style="--i:0"><span>Atelier</span><span>Mèche</span></h1>
+</header>
+
+<main>
+<div class="wrap cover">
+  <figure class="reveal" style="--i:1"><img src="../photos/salon-hero.jpg" alt="Une cliente de dos, cheveux fraîchement coupés, dans la lumière du salon" width="896" height="1120" fetchpriority="high"></figure>
+  <div class="lede reveal" style="--i:2">
+    <div>
+      <p class="kicker">Coupe · couleur · balayage · soins</p>
+      <p class="big">Une coupe qui tient la route jusqu'au prochain rendez‑vous, et une couleur qui vous ressemble encore dans six semaines.</p>
+    </div>
+    <div>
+      <a class="btn" data-hero-cta href="tel:+14505550142"><span class="dot" aria-hidden="true"></span>Réserver au 450-555-0142</a>
+      <div class="meta-line"><span>Sur rendez‑vous</span><span>Mar. au sam.</span><span>Boucherville</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="tarifs">
+  <div class="wrap">
+    <div class="head"><h2>Tarifs</h2><p>Prix de départ, taxes en sus. Le prix final dépend de la longueur et de l'épaisseur ; on vous le confirme avant de commencer.</p></div>
+    <ul class="tarif">
+      <li><h3>Coupe et coiffage</h3><span class="price">dès 55 $</span><p>Consultation, shampooing, coupe aux ciseaux, séchage. Comptez une heure.</p></li>
+      <li><h3>Coupe courte, entretien</h3><span class="price">dès 38 $</span><p>Pour garder une forme nette entre deux vraies coupes.</p></li>
+      <li><h3>Couleur racines</h3><span class="price">dès 85 $</span><p>Retouche de repousse, ton sur ton ou couverture des cheveux blancs.</p></li>
+      <li><h3>Balayage</h3><span class="price">dès 165 $</span><p>Éclaircissement à main levée, patiné et fondu. Prévoyez deux heures et demie.</p></li>
+      <li><h3>Soin profond</h3><span class="price">dès 30 $</span><p>Masque réparateur et massage du cuir chevelu, seul ou avec une coupe.</p></li>
+    </ul>
+    <p class="note">Prix indicatifs pour ce site exemple.</p>
+  </div>
+</section>
+
+<section id="heures">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Heures d'ouverture</p>
+      <table class="hours">
+        <tr class="closed"><th scope="row">Dimanche, lundi</th><td>fermé</td></tr>
+        <tr><th scope="row">Mardi, mercredi</th><td>9 h – 17 h</td></tr>
+        <tr><th scope="row">Jeudi, vendredi</th><td>10 h – 20 h</td></tr>
+        <tr><th scope="row">Samedi</th><td>9 h – 15 h</td></tr>
+      </table>
+      <p class="note">Rendez-vous par téléphone seulement. Un empêchement ? Prévenez-nous la veille.</p>
+    </div>
+    <div class="about" id="atelier">
+      <p class="kicker">L'atelier</p>
+      <p>Deux fauteuils, pas plus. On prend le temps de vous écouter avant de toucher aux ciseaux : ce que vous voulez, ce que vos cheveux acceptent, et combien de minutes vous voulez y consacrer le matin.</p>
+      <p>La couleur se fait à la main, mèche par mèche, avec des produits choisis pour ménager la fibre. Vous repartez avec les conseils d'entretien qui vont avec.</p>
+      <figure><img src="../photos/salon-mains.jpg" alt="Mains de coiffeuse travaillant une mèche au peigne" width="1024" height="1024" loading="lazy"><figcaption>Le travail se fait au peigne, mèche par mèche.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Galerie">
+  <div class="wrap strip">
+    <img class="tall" src="../photos/salon-lieu.jpg" alt="Le salon : deux fauteuils, miroirs et lumière naturelle" width="1024" height="688" loading="lazy">
+    <img src="../photos/salon-hero.jpg" alt="Coupe terminée, vue de dos" width="896" height="1120" loading="lazy">
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Prendre rendez‑vous</h2>
+    <a class="phone" href="tel:+14505550142">450-555-0142</a>
+    <div class="grid">
+      <div><p class="label">Adresse</p><p>Boucherville (Québec)<br>adresse exacte au téléphone</p></div>
+      <div><p class="label">Courriel</p><p><a href="mailto:exemple@exemple.ca">exemple@exemple.ca</a></p></div>
+      <div><p class="label">Paiement</p><p>Débit, crédit, comptant</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>Site exemple — entreprise fictive. Réalisé par Joram Smith · 438 407-3098</p></div></footer>
+
+<div class="callbar" aria-label="Actions rapides"><a class="call" href="tel:+14505550142">Appeler le salon</a><a class="where" href="#heures">Heures</a></div>
+<script>
+(function(){var bar=document.querySelector(".callbar"),cta=document.querySelector("[data-hero-cta]");if(!bar||!cta||!("IntersectionObserver" in window))return;bar.classList.add("is-hidden");new IntersectionObserver(function(e){var gone=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;bar.classList.toggle("is-hidden",!gone);bar.setAttribute("aria-hidden",gone?"false":"true");bar.querySelectorAll("a").forEach(function(a){a.tabIndex=gone?0:-1});}).observe(cta);})();
+</script>
+</body>
+</html>

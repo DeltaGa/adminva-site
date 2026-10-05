@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plomberie R. Lavoie &amp; fils — maître plombier, Rive‑Sud</title>
+<meta name="description" content="Plomberie R. Lavoie & fils, maître plombier sur la Rive‑Sud : urgences, chauffe-eau, rénovation de salle de bain, inspection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: monograph (urgent ribbon → title plate over full-bleed photo → numbered chapters with side rail → service area index → wine band contact) · nav: edge-aligned · footer: wine band · pre-emit critique: P5 H4 E4 S4 R5 V4 */
+:root{
+  --stone:oklch(89.5% 0.008 90);
+  --stone-2:oklch(85% 0.01 90);
+  --ink:oklch(25% 0.004 60);
+  --ink-soft:oklch(43% 0.006 60);
+  --wine:oklch(24% 0.06 10);
+  --wine-2:oklch(31% 0.07 12);
+  --on-wine:oklch(94% 0.01 60);
+  --accent:oklch(62% 0.13 25);
+  --font-display:"Cormorant Garamond",Georgia,serif;
+  --font-body:"Work Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --dur-long:420ms;
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:500;font-style:normal;line-height:1.08;letter-spacing:.02em;margin:0;overflow-wrap:anywhere;min-width:0}
+.wrap{padding-inline:var(--gutter);max-width:84rem;margin-inline:auto}
+.ribbon{background:var(--wine);color:var(--on-wine);font-size:.875rem}
+.ribbon .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1rem;padding-block:.55rem}
+.ribbon a{font-family:var(--font-mono);white-space:nowrap;text-decoration:none;border-bottom:1px solid var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.25rem;border-bottom:1px solid var(--ink)}
+.top .name{font-family:var(--font-display);font-size:1.35rem;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.top nav{display:flex;gap:1.75rem;font-size:.875rem;letter-spacing:.04em}
+.top nav a{text-decoration:none;white-space:nowrap}
+.plate{padding-block:clamp(2.5rem,6vw,5rem) clamp(2rem,4vw,3rem);display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem}
+.plate h1{font-size:clamp(2.6rem,7.4vw,6.2rem);letter-spacing:.025em;max-width:15ch}
+.plate p{margin:0;max-width:46ch;color:var(--ink-soft)}
+.rbq{font-family:var(--font-mono);font-size:.8125rem;letter-spacing:.02em;color:var(--ink-soft)}
+.bleed img{width:100%;aspect-ratio:16/10;object-fit:cover;border-block:1px solid var(--ink)}
+.chapter{display:grid;grid-template-columns:minmax(0,1fr);gap:1.25rem;padding-block:clamp(3.5rem,8vw,7.5rem);border-bottom:1px solid var(--ink)}
+.rail{font-family:var(--font-mono);font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.chapter h2{font-size:clamp(2.2rem,5.4vw,4rem);max-width:18ch;margin-bottom:1.5rem}
+.services{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--ink)}
+.services article{padding:1.5rem 0;border-bottom:1px solid var(--stone-2)}
+.services h3{font-size:1.75rem;margin-bottom:.4rem}
+.services p{margin:0;color:var(--ink-soft);max-width:48ch}
+.services .from{display:block;font-family:var(--font-mono);font-size:.8125rem;margin-top:.6rem;color:var(--ink)}
+.services article.urg{border-left:2px solid var(--wine);padding-left:1rem;padding-right:1rem}
+.towns{list-style:none;margin:0;padding:0;columns:2 9rem;column-gap:2rem;font-size:1rem}
+.towns li{padding:.45rem 0;border-bottom:1px solid var(--stone-2);break-inside:avoid}
+.hours{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.5rem 1.5rem;margin:0;font-size:1rem}
+.hours dt{color:var(--ink-soft)}
+.hours dd{margin:0;font-family:var(--font-mono);font-size:.9375rem;white-space:nowrap}
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem}
+.prose p{max-width:54ch;margin:0 0 1rem}
+.prose figure{margin:2rem 0 0}
+.prose img{width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--ink)}
+figcaption{font-size:.8125rem;color:var(--ink-soft);margin-top:.5rem}
+.gallery{display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.band{background:var(--wine);color:var(--on-wine);padding-block:clamp(3.5rem,8vw,6.5rem) 2rem}
+.band h2{font-size:clamp(2.2rem,6vw,4.4rem);letter-spacing:.03em;max-width:16ch}
+.band .phone{display:inline-block;font-family:var(--font-display);font-size:clamp(2.2rem,7vw,4.6rem);font-weight:600;letter-spacing:.03em;text-decoration:none;margin:1.5rem 0;white-space:nowrap}
+.band .meta{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;font-size:.9375rem;border-top:1px solid var(--wine-2);padding-top:1.75rem}
+.band .meta p{margin:0}
+.band .label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:.3rem}
+.band small{display:block;margin-top:3rem;padding-bottom:5rem;font-size:.75rem;opacity:.7}
+.callbar{position:fixed;inset:auto 0 0 0;z-index:10;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1px;background:var(--ink);border-top:1px solid var(--ink);padding-bottom:env(safe-area-inset-bottom)}
+.callbar a{text-align:center;text-decoration:none;padding:1rem .5rem;font-size:.9375rem;font-weight:500;white-space:nowrap}
+.callbar .call{background:var(--wine);color:var(--on-wine)}
+.callbar .zone{background:var(--stone);color:var(--ink)}
+.reveal{opacity:0;transform:translateY(10px);animation:reveal var(--dur-long) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 110ms)}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{transform:none;animation:fade 200ms linear forwards}@keyframes fade{to{opacity:1}}}
+@media (max-width:760px){.top nav{display:none}}
+@media (min-width:768px){
+  .plate{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:end}
+  .chapter{grid-template-columns:minmax(0,1fr) minmax(0,4fr);gap:var(--gutter)}
+  .services{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:3rem}
+  .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:4rem}
+  .gallery{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+  .band .meta{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .callbar{display:none}
+  .band small{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+<div class="ribbon"><div class="wrap"><span>Fuite, refoulement, plus d'eau chaude ?</span><a href="tel:+14505550193">Urgences 24 h : 450-555-0193</a></div></div>
+<header class="wrap top">
+  <span class="name">R. Lavoie &amp; fils</span>
+  <nav aria-label="Sections"><a href="#services">Services</a><a href="#zone">Zone desservie</a><a href="#maison">La maison</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<div class="wrap plate">
+  <h1 class="reveal" style="--i:0">Plomberie faite pour durer, sur toute la Rive‑Sud</h1>
+  <div class="reveal" style="--i:1">
+    <p>Maître plombier, entreprise familiale. Réparations d'urgence, chauffe-eau, salles de bain refaites de A à Z, inspections avant achat.</p>
+    <p class="rbq" style="margin-top:1rem">Licence RBQ 0000-0000-00 (exemple)</p>
+  </div>
+</div>
+<figure class="bleed reveal" style="--i:2;margin:0"><img src="../photos/plombier-hero.jpg" alt="Le plombier au travail sous un évier, outils en main" width="896" height="1120" fetchpriority="high"></figure>
+
+<div class="wrap">
+<section class="chapter" id="services">
+  <div class="rail">I · Services</div>
+  <div>
+    <h2>Ce qu'on fait, et comment on le facture</h2>
+    <div class="services">
+      <article class="urg"><h3>Urgences</h3><p>Dégât d'eau, tuyau gelé ou éclaté, drain bouché, refoulement. On coupe d'abord l'eau au téléphone avec vous, puis on se déplace.</p><span class="from">Déplacement d'urgence : prix au téléphone</span></article>
+      <article><h3>Chauffe-eau</h3><p>Remplacement, installation électrique ou au gaz, détartrage. On récupère l'ancien appareil.</p><span class="from">Remplacement : soumission gratuite</span></article>
+      <article><h3>Rénovation de salle de bain</h3><p>Déplacement de drains, douche sans seuil, robinetterie, raccordement. On coordonne avec votre entrepreneur ou on vous en recommande un.</p><span class="from">Sur visite, soumission écrite</span></article>
+      <article><h3>Inspection</h3><p>Avant un achat ou après un dégât : état des tuyaux, entrée d'eau, drain principal, rapport écrit avec photos.</p><span class="from">Prix fixe, annoncé avant la visite</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="zone">
+  <div class="rail">II · Zone et heures</div>
+  <div class="cols">
+    <div>
+      <h2>Où on se déplace</h2>
+      <ul class="towns">
+        <li>Longueuil</li><li>Boucherville</li><li>Brossard</li><li>Saint-Lambert</li><li>Saint-Bruno-de-Montarville</li><li>Saint-Basile-le-Grand</li><li>Varennes</li><li>Sainte-Julie</li><li>Chambly</li><li>La Prairie</li><li>Candiac</li><li>Beloeil</li>
+      </ul>
+      <p class="rbq" style="margin-top:1rem">Ailleurs sur la Rive‑Sud : appelez, on vous le dit franchement.</p>
+    </div>
+    <div>
+      <h2>Quand nous joindre</h2>
+      <dl class="hours">
+        <dt>Lundi au vendredi</dt><dd>7 h – 17 h</dd>
+        <dt>Samedi</dt><dd>8 h – 12 h</dd>
+        <dt>Dimanche</dt><dd>urgences seulement</dd>
+        <dt>Urgences</dt><dd>24 h / 7 j</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="maison">
+  <div class="rail">III · La maison</div>
+  <div class="cols prose">
+    <div>
+      <h2>Le père, le fils, le même camion</h2>
+      <p>Robert Lavoie a ouvert l'atelier comme maître plombier ; son fils travaille avec lui. Vous parlez à la personne qui va faire le travail, pas à un centre d'appels.</p>
+      <p>On explique ce qu'on voit avant de réparer, on laisse la place propre en partant, et la soumission écrite reste le prix.</p>
+    </div>
+    <figure><img src="../photos/plombier-detail.jpg" alt="Raccords de cuivre soudés proprement" width="1024" height="1024" loading="lazy"><figcaption>Raccords de cuivre, soudés à l'atelier.</figcaption></figure>
+  </div>
+</section>
+
+<section class="chapter" aria-label="Galerie" style="border-bottom:0">
+  <div class="rail">IV · L'atelier</div>
+  <div class="gallery">
+    <img src="../photos/plombier-atelier.jpg" alt="L'atelier : établi, tuyaux et outils rangés" width="1024" height="688" loading="lazy">
+    <img src="../photos/plombier-detail.jpg" alt="Détail de raccords en cuivre" width="1024" height="1024" loading="lazy">
+  </div>
+</section>
+</div>
+
+<section class="band" id="contact">
+  <div class="wrap">
+    <h2>Une fuite ou un projet ? Un seul numéro.</h2>
+    <a class="phone" href="tel:+14505550193">450-555-0193</a>
+    <div class="meta">
+      <div><p class="label">Courriel</p><p><a href="mailto:exemple@exemple.ca">exemple@exemple.ca</a></p></div>
+      <div><p class="label">Licence</p><p>RBQ 0000-0000-00 (exemple)</p></div>
+      <div><p class="label">Secteur</p><p>Rive‑Sud de Montréal</p></div>
+    </div>
+    <small>Site exemple — entreprise fictive. Réalisé par Joram Smith · 438 407-3098</small>
+  </div>
+</section>
+</main>
+
+<div class="callbar" aria-label="Actions rapides"><a class="call" href="tel:+14505550193">Appeler · urgence 24 h</a><a class="zone" href="#zone">Zone</a></div>
+</body>
+</html>
