@@ -20,8 +20,9 @@
     if (scene && motion) {
       const r = scene.getBoundingClientRect(), span = r.height - innerHeight;
       const p = span > 0 ? clamp(-r.top / span) : 0;
-      if (!cssTimeline) scene.style.setProperty('--p', clamp(p / 0.78).toFixed(3));
+      scene.style.setProperty('--p', clamp(p / 0.78).toFixed(3));
       scene.classList.toggle('is-done', p > 0.74);
+      scene.classList.toggle('is-mid', p > 0.12);
       outs.forEach((li, i) => {
         const on = p > 0.12 + i * 0.15;
         li.classList.toggle('off', on);

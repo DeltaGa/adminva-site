@@ -368,3 +368,34 @@ a.card:hover{transform:translateY(-4px);border-color:var(--color-accent)}
 @media (min-width:56rem){.compare{gap:var(--space-3xl)}}
 .stack{align-items:flex-start}
 .hero-fig figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* v3 : fondus légers, avant / après lisible */
+:root{
+  --fade-edge:linear-gradient(90deg,transparent,#0000000d 1.5%,#000 4%,#000 96%,#0000000d 98.5%,transparent),linear-gradient(180deg,transparent,#0000000d 2%,#000 6%,#000 94%,#0000000d 98%,transparent);
+  --fade-portrait:linear-gradient(90deg,transparent,#0000000d 1.5%,#000 5%,#000 95%,#0000000d 98.5%,transparent),linear-gradient(180deg,transparent,#0000000d 1%,#000 4%,#000 96%,#0000000d 99%,transparent);
+  --color-before:oklch(82% 0.035 20);
+  --color-tag-bg:oklch(10% 0.01 60 / .84);
+  --text-tag:clamp(2rem,1rem + 4.6vw,5rem);
+}
+.ba-tag{position:absolute;z-index:2;margin:0;padding:.1em .3em .02em;font:400 var(--text-tag)/1 var(--font-display);letter-spacing:.02em;text-transform:uppercase;background:var(--color-tag-bg);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-sm);white-space:nowrap;pointer-events:none;transition:opacity var(--dur-base)}
+.ba-before{color:var(--color-before);top:var(--space-md);left:var(--space-md)}
+.ba-after{color:var(--color-accent);top:var(--space-md);left:var(--space-md)}
+.scene-fig .ba-after{left:auto;top:auto;right:var(--space-md);bottom:var(--space-md)}
+.scene-fig picture:first-of-type img,.old>div{filter:saturate(.5) brightness(.82)}
+.motion .scene-fig .ba-after{opacity:0}
+.motion .scene.is-mid .scene-fig .ba-after{opacity:1}
+.motion .scene.is-done .scene-fig .ba-before{opacity:0}
+.motion .scene-fig .apres{animation:none!important;clip-path:inset(0 0 0 calc((1 - var(--p,0))*100%))}
+.scene-div{display:none}
+.motion .scene-div{display:block;position:absolute;top:0;bottom:0;z-index:1;left:calc((1 - var(--p,0))*100%);width:2px;margin-left:-1px;background:var(--color-accent);opacity:0;transition:opacity var(--dur-base)}
+.motion .scene.is-mid:not(.is-done) .scene-div{opacity:1}
+.scene-div::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:50%;background:var(--color-accent);color:var(--color-accent-ink);font:500 var(--text-base)/1 var(--font-body)}
+.motion .scene-stage{align-content:start;padding-top:var(--space-lg)}
+.motion .scene{height:190vh}
+.old,.new{position:relative}
+.compare-col .ba-tag{font-size:clamp(1.5rem,1rem + 3vw,3.25rem);top:var(--space-sm);left:var(--space-sm)}
+.verdict{margin-top:var(--space-sm);font:400 var(--text-xl)/1.1 var(--font-display)}
+.verdict-before{color:var(--color-before)}
+.verdict-after{color:var(--color-accent)}
+:root{--fade-edge:linear-gradient(90deg,transparent,#0000000d 1.5%,#000 max(4%,.875rem),#000 min(96%,calc(100% - .875rem)),#0000000d 98.5%,transparent),linear-gradient(180deg,transparent,#0000000d 2%,#000 max(6%,.875rem),#000 min(94%,calc(100% - 1rem)),#0000000d calc(100% - .625rem),transparent)}
+@media (min-width:56rem){.motion .scene-stage{align-content:center;padding-top:0}}
