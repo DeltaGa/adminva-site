@@ -456,3 +456,15 @@ a.card:hover{transform:translateY(-4px);border-color:var(--color-accent)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.ba-tag{--glass-veil:var(--glass-veil-solid)}}
 :root{--glass-veil:oklch(10% 0.01 60 / .84)}
 .compare-col .ba-tag{--glass-veil:oklch(10% 0.01 60 / .92)}
+
+/* v5 : hero mobile, portrait au premier écran */
+@media (max-width:55.99rem){
+  .hero::before{background:radial-gradient(75% 34% at 100% 16%,var(--color-glow),transparent 72%)}
+  .hero h1{width:fit-content}
+  .hero-fig{position:absolute;top:3.5rem;right:0;width:min(100%,28rem);height:auto;aspect-ratio:8/7;margin:0;--fade-hero:linear-gradient(90deg,transparent 0%,#000 32%),linear-gradient(180deg,transparent 0%,#000 9%,#000 62%,transparent 100%)}
+  .hero-fig img{object-position:50% 0}
+  .hero-fig::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--color-veil),transparent 52%),linear-gradient(0deg,var(--color-paper) 4%,transparent 48%)}
+}
+@media (max-width:39.99rem){
+  .hero{padding-top:calc(3.5rem + min(40vw,11.5rem))}
+}
