@@ -249,7 +249,8 @@ a.card:hover{transform:translateY(-4px);border-color:var(--color-accent)}
 .big a::after{content:"→";color:var(--color-accent);transition:transform var(--dur-base) var(--ease-out)}
 .big a:hover{color:var(--color-accent)}
 .who{display:flex;align-items:center;gap:var(--space-md);margin-top:var(--space-xl)}
-.who img{width:4rem;height:4rem;border-radius:50%;object-fit:cover}
+.who picture{flex:none;display:block;width:4rem;height:4rem}
+.who img{display:block;width:4rem;height:4rem;min-width:4rem;max-width:none;aspect-ratio:1/1;border-radius:50%;object-fit:cover}
 .who p{font-size:var(--text-sm);color:var(--color-muted)}
 
 /* pied */
