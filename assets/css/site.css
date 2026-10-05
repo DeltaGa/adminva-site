@@ -417,3 +417,41 @@ a.card:hover{transform:translateY(-4px);border-color:var(--color-accent)}
 .motion #constat{padding-bottom:0}
 .motion #constat+.sec{padding-top:var(--space-2xl)}
 @media (max-width:55.99rem){.motion .scene{margin-bottom:calc(-1*var(--bar-h))}}
+
+/* v4 : lumière ambre, fondus gauche/haut/bas, étiquettes verre dépoli */
+:root{
+  --color-glow:oklch(64% 0.15 58 / .22);
+  --color-ray:oklch(72% 0.14 65 / .05);
+  --fade-hero:linear-gradient(90deg,transparent 0%,#000 32%),linear-gradient(180deg,transparent 0%,#000 12%,#000 82%,transparent 100%);
+  --glass-veil:oklch(10% 0.01 60 / .55);
+  --glass-veil-solid:oklch(10% 0.01 60 / .9);
+  --glass-edge:oklch(97% 0.01 85 / .18);
+  --glass-hi:oklch(97% 0.01 85 / .14);
+  --glass-before:oklch(48% 0.07 20 / .24);
+  --glass-after:oklch(62% 0.11 75 / .22);
+  --radius-lg:.625rem;
+  --text-chip:clamp(1.15rem,.9rem + 1.2vw,1.4rem);
+  --text-chip-lg:clamp(1rem,1.4vw,1.5rem);
+}
+.hero{overflow-x:clip}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(70% 40% at 100% 82%,var(--color-glow),transparent 72%)}
+.motion .hero::before{animation:breathe 10s var(--ease-in-out) infinite alternate}
+@keyframes breathe{from{opacity:.84}to{opacity:1}}
+.hero-grid>div:first-child{position:relative;z-index:1}
+.hero-fig{width:auto;max-width:none;max-height:none;aspect-ratio:4/5;height:auto;justify-self:stretch;margin-inline:calc(-1*var(--gutter));-webkit-mask-image:var(--fade-hero);mask-image:var(--fade-hero);-webkit-mask-composite:source-in;mask-composite:intersect}
+.hero-fig img{transform:none}
+@media (min-width:56rem){
+  .hero::before{background:radial-gradient(50% 80% at 100% 36%,var(--color-glow),transparent 70%),linear-gradient(250deg,var(--color-ray),transparent 36%)}
+  .hero-fig{position:absolute;top:0;right:0;bottom:0;height:auto;width:min(80svh + 8rem,56vw);aspect-ratio:auto;margin:0}
+  .hero-fig img{object-position:70% 18%}
+}
+.ba-tag{font-size:var(--text-chip);background:linear-gradient(180deg,var(--glass-hi),transparent 50%),linear-gradient(var(--glass-tint),var(--glass-tint)),linear-gradient(var(--glass-veil),var(--glass-veil));-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--glass-edge);border-radius:var(--radius-lg);box-shadow:var(--shadow-tight);padding:.4em .6em .3em;letter-spacing:.06em}
+.ba-before{--glass-tint:var(--glass-before)}
+.ba-after{--glass-tint:var(--glass-after)}
+.scene-fig .ba-before{top:var(--space-sm);left:var(--space-sm)}
+.scene-fig .ba-after{top:var(--space-sm);right:var(--space-sm);bottom:auto;left:auto}
+.compare-col .ba-tag{font-size:var(--text-chip);top:var(--space-xs);left:var(--space-xs)}
+@media (min-width:64rem){.ba-tag,.compare-col .ba-tag{font-size:var(--text-chip-lg)}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.ba-tag{--glass-veil:var(--glass-veil-solid)}}
+:root{--glass-veil:oklch(10% 0.01 60 / .84)}
+.compare-col .ba-tag{--glass-veil:oklch(10% 0.01 60 / .92)}
