@@ -399,3 +399,21 @@ a.card:hover{transform:translateY(-4px);border-color:var(--color-accent)}
 .verdict-after{color:var(--color-accent)}
 :root{--fade-edge:linear-gradient(90deg,transparent,#0000000d 1.5%,#000 max(4%,.875rem),#000 min(96%,calc(100% - .875rem)),#0000000d 98.5%,transparent),linear-gradient(180deg,transparent,#0000000d 2%,#000 max(6%,.875rem),#000 min(94%,calc(100% - 1rem)),#0000000d calc(100% - .625rem),transparent)}
 @media (min-width:56rem){.motion .scene-stage{align-content:center;padding-top:0}}
+
+/* v3b : scène avant / après plein écran */
+:root{--text-list:1.5rem;--bar-h:4rem}
+.motion #constat{padding-bottom:var(--space-lg)}
+.motion .scene{height:180vh}
+.motion .scene-stage{top:4rem;height:calc(100svh - 4rem);align-content:center;gap:var(--space-lg);padding-block:var(--space-md) calc(var(--bar-h) + var(--space-md))}
+.motion .ledger li{min-height:clamp(2.5rem,6.5svh,3.75rem)}
+@media (min-width:56rem){
+  .motion .scene-stage{padding-block:var(--space-md)}
+}
+@media (min-width:75rem){
+  .motion .scene-stage{max-width:96rem;grid-template-columns:minmax(0,9fr) minmax(0,4fr);gap:var(--space-3xl)}
+  .motion .ledger li{font-size:var(--text-list);min-height:clamp(3rem,7svh,4.25rem)}
+  .motion .ledger h3{font-size:var(--text-sm)}
+}
+.motion #constat{padding-bottom:0}
+.motion #constat+.sec{padding-top:var(--space-2xl)}
+@media (max-width:55.99rem){.motion .scene{margin-bottom:calc(-1*var(--bar-h))}}
