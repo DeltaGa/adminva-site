@@ -249,8 +249,8 @@ a.card:hover{transform:translateY(-4px);border-color:var(--color-accent)}
 .big a::after{content:"→";color:var(--color-accent);transition:transform var(--dur-base) var(--ease-out)}
 .big a:hover{color:var(--color-accent)}
 .who{display:flex;align-items:center;gap:var(--space-md);margin-top:var(--space-xl)}
-.who picture{flex:none;display:block;width:4rem;height:4rem}
-.who img{display:block;width:4rem;height:4rem;min-width:4rem;max-width:none;aspect-ratio:1/1;border-radius:50%;object-fit:cover}
+.who picture{flex:none;display:block;width:5rem;height:5rem}
+.who img{display:block;width:5rem;height:5rem;min-width:5rem;max-width:none;aspect-ratio:1/1;border-radius:var(--radius-sm);object-fit:cover}
 .who p{font-size:var(--text-sm);color:var(--color-muted)}
 
 /* pied */
@@ -468,3 +468,7 @@ a.card:hover{transform:translateY(-4px);border-color:var(--color-accent)}
 @media (max-width:39.99rem){
   .hero{padding-top:calc(3.5rem + min(40vw,11.5rem))}
 }
+.dent-hero-in{display:grid;gap:var(--space-2xl);align-items:center}
+.dent-hero h1{max-width:18ch}
+.eyebrow{color:var(--color-accent);font-size:var(--text-sm);margin-bottom:var(--space-md)}
+@media (min-width:56rem){.dent-hero-in{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--space-3xl)}}
