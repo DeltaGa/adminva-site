@@ -114,7 +114,7 @@
   /* Type (app: Inter, t1 34, t2 22, t3 17, t4 13; two poster sizes for the site) */
   --f-ui: "Inter", -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
   --t-display: clamp(2.5rem, 4.2vw + 1.1rem, 5.25rem);
-  --t-hero: clamp(2.5rem, 3.6vw + 1.1rem, 4.5rem);
+  --t-hero: clamp(2.5rem, 2.6vw + 1.1rem, 3.75rem);
   --t-section: clamp(2rem, 2.2vw + 1.2rem, 3.25rem);
   --t-1: 2.125rem;
   --t-2: 1.375rem;
@@ -459,7 +459,7 @@ main { position: relative; z-index: var(--z-content); }
 
 .hero { padding: calc(var(--s-32) + var(--s-2)) 0 var(--s-24); }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-16); align-items: center; }
-.hero .phrase { font-size: var(--t-hero); max-width: 11ch; }
+.hero .phrase { font-size: var(--t-hero); }
 .lede { margin-top: var(--s-6); font-size: var(--t-2); line-height: var(--lh-meta); color: var(--c-ink-2); max-width: var(--measure-lede); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); margin-top: var(--s-8); }
 .status { display: flex; align-items: center; gap: var(--s-2); margin: 0; font-size: var(--t-4); line-height: var(--lh-meta); color: var(--c-ink-2); }
@@ -537,7 +537,7 @@ main { position: relative; z-index: var(--z-content); }
   line-height: var(--lh-meta);
   box-shadow: 0 10px 30px var(--c-action-glow);
 }
-.orb { position: absolute; right: calc(-1 * var(--s-3)); bottom: calc(-1 * var(--s-2)); width: 8.5rem; height: 8.5rem; pointer-events: none; }
+.orb { position: absolute; right: calc(-1 * var(--s-3)); bottom: calc(-1 * var(--s-8)); width: 8.5rem; height: 8.5rem; pointer-events: none; }
 .orb canvas { display: block; width: 100%; height: 100%; }
 /* Without the canvas (no JavaScript): a still sphere from the same colours. */
 .orb::before { content: ""; position: absolute; inset: 31%; border-radius: var(--r-pill); background: radial-gradient(circle at 35% 30%, var(--orb-light-1), var(--amb-clear) 60%), radial-gradient(circle at 35% 32%, var(--orb-core-1), var(--orb-core-2)); box-shadow: 0 0 40px var(--orb-glow), inset 0 0 0 1.5px var(--orb-rim); }
@@ -550,7 +550,7 @@ main { position: relative; z-index: var(--z-content); }
 
 @media (min-width: 60rem) {
   .hero { padding: calc(var(--s-32) + var(--s-8)) 0 var(--s-32); }
-  .hero__grid { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--s-12); }
+  .hero__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-12); }
   .scene { justify-self: end; }
   .orb { right: calc(-1 * var(--s-8)); }
   .week__grid { grid-template-rows: repeat(4, 3.75rem); background: repeating-linear-gradient(180deg, var(--amb-clear) 0 calc(3.75rem + var(--s-1) - 1px), var(--c-rule) calc(3.75rem + var(--s-1) - 1px) calc(3.75rem + var(--s-1))); }
