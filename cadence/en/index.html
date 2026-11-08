@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<title>Cadence &middot; your whole term</title>
+<meta name="description" content="The assistant for your studies: your timetable, your evaluations, what you still need and the way you work, in one place. You talk to it; it remembers, from one term to the next.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="alternate" hreflang="fr-CA" href="../">
+<link rel="alternate" hreflang="en" href="./">
+<link rel="preload" as="font" type="font/woff" href="../fonts/inter-400-latin.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="../fonts/inter-700-latin.woff" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<script src="../ambient.js"></script>
+<script src="../site.js"></script>
+</head>
+<body class="night">
+<a class="skip" href="#contenu">Skip to content</a>
+<div class="ambient" aria-hidden="true"><div class="ambient__grain"></div><div class="ambient__sheen"></div></div>
+<!-- nav -->
+<nav class="nav" aria-label="Main">
+<a class="brand" href="../en/"><svg viewBox="0 0 36 36" aria-hidden="true" focusable="false"><g fill="none" stroke-width="3" stroke-linecap="round"><circle class="arc-gold" cx="18" cy="18" r="5.5" stroke-dasharray="13.823 34.558" transform="rotate(108 18 18)"/><circle class="arc" cx="18" cy="18" r="10" stroke-dasharray="36.442 62.832" transform="rotate(75.6 18 18)"/><circle class="arc" cx="18" cy="18" r="14.5" stroke-dasharray="69.241 91.106" transform="rotate(43.2 18 18)"/></g></svg>Cadence</a>
+<ul><li class="optional"><a href="../en/privacy/">Privacy</a></li><li class="optional"><a href="../en/support/">Support</a></li><li><a class="lang" href="../" hreflang="fr-CA" lang="fr-CA">Fran&ccedil;ais</a></li><li><button class="chip motion-toggle" type="button" aria-pressed="false" aria-label="Pause motion" hidden><svg class="icon-pause" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M3 2h3v10H3zM8 2h3v10H8z"/></svg><svg class="icon-play" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M3.5 1.5v11l9-5.5z"/></svg></button></li></ul>
+</nav>
+<!-- /nav -->
+<main id="contenu">
+<section class="hero" aria-labelledby="title">
+<div class="wrap hero__grid">
+<div class="hero__text">
+<h1 class="phrase" id="title" data-say><span class="w">Your</span> <span class="w i1">whole</span> <span class="w i2">term.</span> <span class="w i3">You</span> <span class="w i4">speak,</span> <span class="nobr"><span class="w i5">it</span> <span class="w i6 mark">follows.</span></span></h1>
+<p class="lede" data-reveal>The assistant for your studies. Your timetable, your evaluations, what you still need, and the way you work: <strong>you tell it once, it remembers</strong>, from one term to the next.</p>
+<div class="actions" data-reveal><a class="button" href="#evening">See an evening of the term</a><p class="status">In closed testing: Android first, then iPhone. The app speaks French today.</p></div>
+</div>
+<div class="scene" data-scene>
+<p class="visually-hidden">Illustration: a week of classes. Someone says &ldquo;Move my lab to Thursday.&rdquo;, and the lab moves to Thursday; &ldquo;My psych class on Tuesday is cancelled.&rdquo;, and the class is struck through; &ldquo;Add a team meeting Friday at 3 pm.&rdquo;, and the meeting appears.</p>
+<div class="scene__art" aria-hidden="true">
+<p class="bubble" data-beat="0">&ldquo;Move my lab to Thursday.&rdquo;</p>
+<p class="bubble" data-beat="1">&ldquo;My psych class on Tuesday is cancelled.&rdquo;</p>
+<p class="bubble bubble--last" data-beat="2">&ldquo;Add a team meeting Friday at 3&nbsp;pm.&rdquo;</p>
+<div class="week">
+<p class="week__title"><span>Week 7</span><span>Oct. 13 to 17</span></p>
+<div class="week__days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+<div class="week__grid">
+<div class="block c4 d1 r1"><b>Psych</b><i>8:30</i></div>
+<div class="block c2 d1 r3"><b>Stats</b><i>1:00</i></div>
+<div class="block c3 d3 r1"><b>Nutri</b><i>8:30</i></div>
+<div class="block c2 d3 r3"><b>Stats</b><i>1:00</i></div>
+<div class="block c5 d4 r2"><b>Chem</b><i>10:30</i></div>
+<div class="block c3 d5 r1"><b>Nutri</b><i>8:30</i></div>
+<div class="block c1 d5 r2"><b>Sport</b><i>10:30</i></div>
+<div class="block c5 d4 r4 b-labo"><b>Lab</b><i>3:00</i></div>
+<div class="block c4 d2 r2 b-psy"><b>Psych</b><i>10:30</i><span class="strike"></span><span class="badge">Cancelled</span></div>
+<div class="block d5 r4 b-meet"><b>Team</b><i>3:00</i></div>
+</div>
+</div>
+<div class="orb"></div>
+</div>
+<div class="scene__foot"><button class="chip" type="button" data-replay hidden>Replay the scene</button></div>
+</div>
+</div>
+</section>
+
+<section class="evening" id="evening" aria-labelledby="evening-title">
+<div class="wrap">
+<h2 class="chapter__title" id="evening-title" data-reveal>An evening of the term.</h2>
+<p class="chapter__lede" data-reveal>It does not wait for you. It knows what this week holds, and it tells you at the right moment.</p>
+<ol class="stages">
+<li class="stage">
+<div class="stage__text" data-reveal>
+<span class="stage__when">4:35&nbsp;pm</span>
+<h3>Tonight, what&nbsp;matters.</h3>
+<p>The last class ends. Cadence tells you what to do tonight and by when: your next class, <strong>your plan for the evening</strong>, your deadlines for the next seven days.</p>
+<p>Check off a block; swipe a deadline to mark it done or put it off.</p>
+</div>
+<figure class="shot shot--short c4 n1" data-reveal><img src="../img/ce-soir.webp" width="600" height="547" alt="The Tonight screen, in French: 1 h 50 of work tonight, the midterm of NUT1036 in 3 days, and the next class, PSY1035, in 25 minutes."></figure>
+</li>
+<li class="stage">
+<div class="stage__text" data-reveal>
+<span class="stage__when">7:00&nbsp;pm</span>
+<h3>You speak, it&nbsp;follows.</h3>
+<p>Say it the way you would tell a friend. It shows you the change before applying it; you confirm, and <strong>you can always undo</strong>.</p>
+<ul class="said" aria-label="Sample sentences">
+<li>&ldquo;My class tomorrow is cancelled.&rdquo;</li>
+<li>&ldquo;Lab&nbsp;2 is pushed to October&nbsp;21.&rdquo;</li>
+<li>&ldquo;I&rsquo;m aiming for a B+ in NUT1036.&rdquo;</li>
+</ul>
+</div>
+<figure class="shot c1 n1" data-reveal><img src="../img/calendrier.webp" width="600" height="1067" loading="lazy" alt="The calendar, week view, October 12 to 18: the classes of each course and, at the top of each day, the evaluations with their weight."></figure>
+</li>
+<li class="stage stage--red" data-mood="red">
+<div class="stage__text" data-reveal>
+<span class="stage__when">Week&nbsp;9</span>
+<h3>You see the red week&nbsp;coming.</h3>
+<p>Three evaluations, <span class="danger">26&nbsp;%</span> of your term. It spots that week long in advance, the ambience turns red and beats, and <strong>the work is spread</strong> over your evenings until then.</p>
+</div>
+<figure class="shot shot--red n1" data-reveal><img src="../img/session.webp" width="600" height="1067" loading="lazy" alt="The Term tab, in French: week 9 holds 3 evaluations, 26 % of the term, above the timeline of the fifteen weeks."></figure>
+</li>
+<li class="stage">
+<div class="stage__text" data-reveal>
+<span class="stage__when">After the midterm</span>
+<h3>What you need, course by&nbsp;course.</h3>
+<p>Every grade that comes in updates your current grade and <strong>what you need on the rest of the course</strong> for the letter you are aiming for.</p>
+</div>
+<figure class="shot c2 n1" data-reveal><img src="../img/cours.webp" width="600" height="1067" loading="lazy" alt="The Courses tab: each course with its next evaluation, its weight and the current grade."></figure>
+</li>
+</ol>
+<p class="note evening__note">The captures show the app&rsquo;s sample term.</p>
+</div>
+</section>
+
+<section class="interlude" aria-labelledby="done-tonight" data-event="gold">
+<div class="wrap">
+<h2 class="phrase" id="done-tonight" data-say><span class="w">Done</span> <span class="nobr"><span class="w i1">for</span> <span class="w i2 mark mark--gold">tonight.</span></span></h2>
+<p data-reveal>Every block you check off is a small event: gold rises from the edges, then everything settles&nbsp;down.</p>
+</div>
+</section>
+
+<section class="memory" aria-labelledby="memory">
+<div class="wrap memory__grid">
+<div class="memory__text">
+<p class="eyebrow" data-reveal>The heart of Cadence</p>
+<h2 class="chapter__title" id="memory" data-reveal>It remembers the way you&nbsp;study.</h2>
+<p data-reveal>You tell it once how you work: start reviewing a week before an exam, read the instructions of an assignment the day they come out, nothing on Wednesday evenings. Every evening, your plan follows.</p>
+<p data-reveal>It also notices what you actually do. When your evenings no longer look like what you told it, it suggests a change; <strong>nothing changes without your yes</strong>.</p>
+<p data-reveal>You read everything it knows, in your own words, and correct it in one&nbsp;sentence.</p>
+</div>
+<figure class="memory__card n1" data-reveal>
+<div class="mcard" data-memory>
+<p class="mcard__title">The way you study</p>
+<p class="mcard__sub">What Cadence knows about the way you study</p>
+<ul class="mcard__list">
+<li class="rule"><span class="rule__text">&ldquo;I start reviewing a week before an exam.&rdquo;</span><span class="rule__from">You said it on Sept.&nbsp;12.</span></li>
+<li class="rule"><span class="rule__text">&ldquo;I read the instructions of an assignment the day they come out.&rdquo;</span><span class="rule__from">You said it on Sept.&nbsp;12.</span></li>
+<li class="rule"><span class="rule__text">&ldquo;Nothing on Wednesday evenings: I work.&rdquo;</span><span class="rule__from">You said it on Oct.&nbsp;3.</span></li>
+<li class="rule is-new" data-new hidden><span class="rule__text">&ldquo;On Sundays, one hour at most.&rdquo;</span><span class="rule__from">Cadence noticed it; you confirmed tonight.</span></li>
+</ul>
+<div class="proposal" data-proposal>
+<p class="proposal__from">Cadence noticed</p>
+<p class="rule__text">Your last three Sundays stopped after one hour. &ldquo;On Sundays, one hour at most&rdquo;?</p>
+<div class="proposal__actions" data-actions hidden><button class="chip chip--primary" type="button" data-yes>Confirm</button><button class="chip" type="button" data-no>Not really</button></div>
+</div>
+<div class="mcard__done" data-done hidden>
+<p data-said="yes" hidden>Noted. Your Sundays will count one hour.</p>
+<p data-said="no" hidden>Nothing changes. It will not suggest it again without a new reason.</p>
+<button class="chip" type="button" data-again>Again</button>
+</div>
+<p class="visually-hidden" aria-live="polite" data-live></p>
+</div>
+<figcaption>Illustration. The way you study comes in a later test version.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="years" aria-labelledby="terms">
+<div class="wrap">
+<h2 class="chapter__title" id="terms" data-reveal>From one term to the next, it grows with&nbsp;you.</h2>
+<p class="chapter__lede" data-reveal>An assistant that has known you since your first class. What it knows cannot be rebuilt anywhere else.</p>
+<ol class="years__track">
+<li class="year" data-reveal>
+<div class="year__mark" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><g><circle class="track" cx="18" cy="18" r="5.5"/><circle class="track" cx="18" cy="18" r="10"/><circle class="track" cx="18" cy="18" r="14.5"/><circle class="arc-gold fill lg" cx="18" cy="18" r="5.5" stroke-dasharray="13.823 34.558" transform="rotate(108 18 18)"/></g></svg></div>
+<div><p class="year__when">Your first term</p><p>It brings in your courses and your timetable. You tell it how you study; it builds your evenings around that.</p></div>
+</li>
+<li class="year n1" data-reveal>
+<div class="year__mark" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><g><circle class="track" cx="18" cy="18" r="5.5"/><circle class="track" cx="18" cy="18" r="10"/><circle class="track" cx="18" cy="18" r="14.5"/><circle class="arc-gold fill lg" cx="18" cy="18" r="5.5" stroke-dasharray="13.823 34.558" transform="rotate(108 18 18)"/><circle class="arc fill lm" cx="18" cy="18" r="10" stroke-dasharray="36.442 62.832" transform="rotate(75.6 18 18)"/></g></svg></div>
+<div><p class="year__when">The next term</p><p>It picks up where you left off: the way you review, your busy evenings, what worked.</p></div>
+</li>
+<li class="year n2" data-reveal>
+<div class="year__mark" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><g><circle class="track" cx="18" cy="18" r="5.5"/><circle class="track" cx="18" cy="18" r="10"/><circle class="track" cx="18" cy="18" r="14.5"/><circle class="arc-gold fill lg" cx="18" cy="18" r="5.5" stroke-dasharray="13.823 34.558" transform="rotate(108 18 18)"/><circle class="arc fill lm" cx="18" cy="18" r="10" stroke-dasharray="36.442 62.832" transform="rotate(75.6 18 18)"/><circle class="arc fill lo" cx="18" cy="18" r="14.5" stroke-dasharray="69.241 91.106" transform="rotate(43.2 18 18)"/></g></svg></div>
+<div><p class="year__when">The years go by</p><p>Your courses change. It keeps your grades, your past terms and what it has learned about&nbsp;you.</p></div>
+</li>
+<li class="year n3" data-reveal>
+<div class="year__mark is-full" aria-hidden="true"><svg viewBox="0 0 36 36" focusable="false"><g><circle class="arc-gold fill lg" cx="18" cy="18" r="5.5" stroke-dasharray="13.823 34.558" transform="rotate(108 18 18)"/><circle class="arc fill lm" cx="18" cy="18" r="10" stroke-dasharray="36.442 62.832" transform="rotate(75.6 18 18)"/><circle class="arc fill lo" cx="18" cy="18" r="14.5" stroke-dasharray="69.241 91.106" transform="rotate(43.2 18 18)"/></g></svg></div>
+<div><p class="year__when">Until you graduate</p><p>Your calendar, your work and the way you study, in one place, from the first evening to the&nbsp;last.</p></div>
+</li>
+</ol>
+</div>
+</section>
+
+<section class="pledge" aria-label="Commitments">
+<div class="wrap">
+<div class="pledge__grid">
+<div class="panel" data-reveal>
+<h2>Your credentials stay with&nbsp;you.</h2>
+<ul class="dots">
+<li>Your access code and password never leave your phone, and stay on it only if you choose to keep them.</li>
+<li>Cadence reads what your school already shows you; it never posts, changes or sends anything there.</li>
+</ul>
+</div>
+<div class="panel n1" data-reveal>
+<h2>What it knows belongs to&nbsp;you.</h2>
+<ul class="dots">
+<li>You read each thing it keeps, with the sentence you said, and you correct it or remove it.</li>
+<li>Nothing is sold, nothing is used for advertising. You erase everything whenever you want, in the app or from the <a href="account-deletion/">Account deletion</a> page.</li>
+</ul>
+</div>
+</div>
+<p class="pledge__more"><a href="privacy/">Read the privacy policy</a></p>
+</div>
+</section>
+</main>
+<!-- foot -->
+<footer class="foot">
+<div class="wrap">
+<p class="foot__line">Your whole term. You speak, it&nbsp;follows.</p>
+<ul class="foot__links"><li><a href="../en/privacy/">Privacy</a></li><li><a href="../en/terms/">Terms</a></li><li><a href="../en/support/">Support</a></li><li><a href="../en/account-deletion/">Account deletion</a></li><li><a href="../en/legal/">Legal notice</a></li></ul>
+<p class="foot__note">Independent app, not affiliated with Adminva or with any school.<br>&copy; 2026 Joram Smith Tchicdje Kouojip.</p>
+</div>
+</footer>
+<!-- /foot -->
+</body>
+</html>
