@@ -115,6 +115,8 @@
   --f-ui: "Inter", -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
   --t-display: clamp(2.5rem, 4.2vw + 1.1rem, 5.25rem);
   --t-hero: clamp(2.5rem, 2.6vw + 1.1rem, 3.75rem);
+  --t-announce: clamp(4rem, 10vw + 1rem, 10rem);
+  --lh-announce: 0.98;
   --t-section: clamp(2rem, 2.2vw + 1.2rem, 3.25rem);
   --t-1: 2.125rem;
   --t-2: 1.375rem;
@@ -454,6 +456,12 @@ main { position: relative; z-index: var(--z-content); }
 }
 .button:hover { text-decoration: none; }
 .button:active { transform: scale(.96); transition-duration: var(--d-press); }
+/* The payment button while the payment page does not exist yet (site/DESIGN.md 6, D62). */
+.button--soon { background: var(--c-pill); color: var(--c-ink); box-shadow: none; cursor: default; }
+.button--soon:active { transform: none; }
+/* A text action beside the one button of a screen. */
+.quiet { display: inline-flex; align-items: center; min-height: var(--h-target); color: var(--c-ink); font-weight: 600; line-height: 1; letter-spacing: 0; white-space: nowrap; text-decoration-color: var(--c-ink-2); }
+.quiet:hover { color: var(--c-link); text-decoration-color: currentColor; }
 
 /* ---------- Home: the opening, a phrase and a spoken week (site/DESIGN.md 5.3) ---------- */
 
@@ -462,7 +470,7 @@ main { position: relative; z-index: var(--z-content); }
 .hero .phrase { font-size: var(--t-hero); }
 .lede { margin-top: var(--s-6); font-size: var(--t-2); line-height: var(--lh-meta); color: var(--c-ink-2); max-width: var(--measure-lede); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); margin-top: var(--s-8); }
-.status { display: flex; align-items: center; gap: var(--s-2); margin: 0; font-size: var(--t-4); line-height: var(--lh-meta); color: var(--c-ink-2); }
+.status { display: flex; align-items: center; gap: var(--s-2); margin: var(--s-5) 0 0; font-size: var(--t-4); line-height: var(--lh-meta); color: var(--c-ink-2); }
 .status::before { content: ""; flex: none; width: var(--dot); height: var(--dot); border-radius: var(--r-pill); background: var(--c-gold); }
 
 .scene { position: relative; justify-self: center; width: min(100%, 30rem); }
@@ -675,6 +683,37 @@ main { position: relative; z-index: var(--z-content); }
   .panel { padding: var(--s-10) var(--s-8); }
 }
 
+/* ---------- Home: the finale, announced like a release (D62) ---------- */
+
+.finale { padding: var(--s-24) 0 var(--s-32); text-align: center; }
+.finale .phrase { max-width: 12ch; margin: 0 auto; font-size: var(--t-announce); line-height: var(--lh-announce); }
+.finale p { margin: var(--s-6) auto 0; color: var(--c-ink-2); font-size: var(--t-2); line-height: var(--lh-meta); max-width: 30ch; }
+.finale__action { display: flex; justify-content: center; margin-top: var(--s-10); }
+
+/* ---------- Pre-order: the announcement (site/DESIGN.md 1, 6; D62) ---------- */
+
+.announce { padding: calc(var(--s-32) + var(--s-2)) 0 var(--s-24); text-align: center; }
+.announce__wrap { display: flex; flex-direction: column; align-items: center; }
+.emblem-wrap { position: relative; width: 5.5rem; height: 5.5rem; margin-bottom: var(--s-8); }
+.emblem-wrap::before { content: ""; position: absolute; inset: -60%; z-index: -1; border-radius: var(--r-pill); background: radial-gradient(closest-side, var(--c-gold-band), var(--amb-clear)); }
+.emblem { display: block; width: 100%; height: 100%; }
+.emblem circle { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+.emblem .arc { stroke: var(--c-link); }
+.emblem .arc-gold { stroke: var(--c-gold); }
+.emblem .track { stroke: var(--c-rule); }
+.js.motion .emblem .fill { transition: stroke-dashoffset var(--d-arc) var(--ease-glide); transition-delay: var(--d-fade); }
+.js.motion .emblem-wrap:not(.is-in) .fill { stroke-dashoffset: var(--len); }
+.announce__kicker { justify-content: center; }
+.announce__date { font-size: var(--t-announce); line-height: var(--lh-announce); letter-spacing: var(--track-display); }
+.announce__when { margin: var(--s-4) 0 0; font-size: var(--t-4); font-weight: 600; line-height: var(--lh-meta); color: var(--c-ink-2); letter-spacing: 0; }
+.price { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: var(--s-1) var(--s-4); margin: var(--s-12) 0 var(--s-10); }
+.price__now { font-size: var(--t-section); font-weight: 700; line-height: var(--lh-section); letter-spacing: var(--track-section); font-variant-numeric: tabular-nums; }
+.price__was { font-size: var(--t-3); line-height: var(--lh-meta); color: var(--c-ink-2); font-variant-numeric: tabular-nums; }
+.price__was s { text-decoration-thickness: var(--focus-ring); }
+.announce__terms { max-width: 34rem; margin: 0 auto var(--s-12); text-align: left; }
+.announce__pay { display: flex; flex-direction: column; align-items: center; gap: var(--s-5); }
+.announce__pay .note { max-width: 44ch; margin: 0; text-align: center; }
+
 /* ---------- Legal pages: a long document ---------- */
 
 .doc { padding: calc(var(--s-32) + var(--s-2)) 0 var(--s-20); }
@@ -709,5 +748,5 @@ main { position: relative; z-index: var(--z-content); }
   *, *::before, *::after { animation: none !important; transition-duration: 0s !important; transition-delay: 0s !important; }
   .phrase .w, [data-reveal] { opacity: 1 !important; transform: none !important; }
   .phrase .mark { background-size: 100% 100% !important; }
-  .year .fill { stroke-dashoffset: 0 !important; }
+  .year .fill, .emblem .fill { stroke-dashoffset: 0 !important; }
 }
