@@ -1,0 +1,40 @@
+# Refreshes the pre-order counts of the student associations (cadence/associations/data/) from
+# Stripe every night near 4 a.m. in Toronto, and commits only when a count changed (Cadence D93).
+# Reads two secrets: STRIPE_RESTRICTED_KEY (read-only restricted key) and CADENCE_ASSOCIATIONS.
+name: cadence associations
+
+on:
+  schedule:
+    # 09:17 UTC is 04:17 in Toronto in winter (EST), 05:17 in summer (EDT): cron runs in UTC.
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cadence-associations
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '24'
+
+jobs:
+  refresh:
+    name: refresh the counts
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # The one job that writes: it commits and pushes the data files that changed.
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Read Stripe, write the counts, commit them if they changed
+        run: node .github/cadence/associations-sync.mjs --data cadence/associations/data --payment-link plink_1UaqwhKwIoA9taGlmVgcO7Ku --commit
+        env:
+          # The restricted key reads Stripe; the mapping names the data file of each association.
+          STRIPE_RESTRICTED_KEY: ${{ secrets.STRIPE_RESTRICTED_KEY }}
+          CADENCE_ASSOCIATIONS: ${{ secrets.CADENCE_ASSOCIATIONS }}

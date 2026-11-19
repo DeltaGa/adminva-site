@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Suivi des associations &middot; Cadence</title>
+<meta name="description" content="Le suivi des pr&eacute;commandes des associations &eacute;tudiantes partenaires de Cadence.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="alternate" hreflang="fr-CA" href="../associations/">
+<link rel="alternate" hreflang="en" href="../en/associations/">
+<link rel="preload" as="font" type="font/woff" href="../fonts/inter-400-latin.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="../fonts/inter-700-latin.woff" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<script src="../ambient.js"></script>
+<script src="../site.js"></script>
+<script src="../associations.js"></script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="ambient" aria-hidden="true"><div class="ambient__grain"></div><div class="ambient__sheen"></div></div>
+<!-- nav -->
+<nav class="nav" aria-label="Principale">
+<a class="brand" href="../"><svg viewBox="0 0 36 36" aria-hidden="true" focusable="false"><g fill="none" stroke-width="3" stroke-linecap="round"><circle class="arc-gold" cx="18" cy="18" r="5.5" stroke-dasharray="13.823 34.558" transform="rotate(108 18 18)"/><circle class="arc" cx="18" cy="18" r="10" stroke-dasharray="36.442 62.832" transform="rotate(75.6 18 18)"/><circle class="arc" cx="18" cy="18" r="14.5" stroke-dasharray="69.241 91.106" transform="rotate(43.2 18 18)"/></g></svg>Cadence</a>
+<ul><li class="optional"><a href="../confidentialite/">Confidentialit&eacute;</a></li><li class="optional"><a href="../soutien/">Soutien</a></li><li><a class="lang" href="../en/associations/" hreflang="en" lang="en">English</a></li><li><button class="chip motion-toggle" type="button" aria-pressed="false" aria-label="Mettre le mouvement en pause" hidden><svg class="icon-pause" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M3 2h3v10H3zM8 2h3v10H8z"/></svg><svg class="icon-play" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M3.5 1.5v11l9-5.5z"/></svg></button></li></ul>
+</nav>
+<!-- /nav -->
+<main id="contenu">
+<article class="doc portal">
+<div class="wrap">
+<p class="eyebrow">Associations &eacute;tudiantes</p>
+<h1>Suivi des pr&eacute;commandes</h1>
+<p class="lede portal__lede">Les pr&eacute;commandes faites par le lien de ton association, et la part qui lui revient. Entre le code re&ccedil;u de Cadence.</p>
+<p class="note" data-nojs>Cette page a besoin de JavaScript pour lire ton code. Active&#8209;le, ou &eacute;cris&#8209;nous &agrave; <a href="mailto:joram@adminva.ca?subject=Cadence">joram@adminva.ca</a>.</p>
+<form class="portal__form" data-portal data-dir="data/" data-locale="fr-CA" hidden>
+<label class="portal__label" for="code">Code de ton association</label>
+<div class="portal__row">
+<input class="search portal__code" id="code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="go" placeholder="XXXX-XXXX-XXXX-XXXX" data-code>
+<button class="button" type="submit">Voir les chiffres</button>
+</div>
+<p class="note portal__status" aria-live="polite" data-status data-empty="Entre le code re&ccedil;u de Cadence." data-busy="Lecture&hellip;" data-unknown="Ce code ne correspond &agrave; aucune association. V&eacute;rifie&#8209;le, ou &eacute;cris&#8209;nous &agrave; joram@adminva.ca." data-error="Les chiffres n&rsquo;ont pas pu &ecirc;tre charg&eacute;s. R&eacute;essaie dans un moment."></p>
+</form>
+<section class="portal__result" aria-labelledby="chiffres" data-result hidden>
+<h2 id="chiffres" tabindex="-1" data-result-title>Tes pr&eacute;commandes</h2>
+<dl class="figures">
+<div class="figure"><dt>Confirm&eacute;es</dt><dd class="num" data-figure="confirmed"></dd></div>
+<div class="figure"><dt>Rembours&eacute;es</dt><dd class="num" data-figure="refunded"></dd></div>
+<div class="figure"><dt>Nettes</dt><dd class="num" data-figure="net"></dd></div>
+<div class="figure figure--share"><dt>Part estim&eacute;e de ton association</dt><dd class="num" data-figure="share"></dd></div>
+</dl>
+<p class="note"><span class="num" data-rate></span> par pr&eacute;commande nette, vers&eacute;e au lancement de Cadence.</p>
+<p class="note">Derni&egrave;re mise &agrave; jour&nbsp;: <span class="num" data-updated></span>. Les chiffres sont v&eacute;rifi&eacute;s chaque nuit&nbsp;; la date change quand ils changent.</p>
+</section>
+</div>
+</article>
+</main>
+<!-- foot -->
+<footer class="foot">
+<div class="wrap">
+<p class="foot__line">Ta session enti&egrave;re. Tu parles, elle suit.</p>
+<ul class="foot__links"><li><a href="../precommande/">Pr&eacute;commande</a></li><li><a href="../blog/">Blog</a></li><li><a href="../confidentialite/">Confidentialit&eacute;</a></li><li><a href="../conditions/">Conditions</a></li><li><a href="../soutien/">Soutien</a></li><li><a href="../suppression/">Suppression du compte</a></li><li><a href="../mentions-legales/">Mentions l&eacute;gales</a></li></ul>
+<p class="foot__note">Application ind&eacute;pendante, non affili&eacute;e &agrave; Adminva ni &agrave; aucun &eacute;tablissement d&rsquo;enseignement.<br>&copy; 2026 Joram Smith Tchicdje Kouojip.</p>
+</div>
+</footer>
+<!-- /foot -->
+</body>
+</html>
