@@ -2,7 +2,8 @@
 // association types the code it received; the browser computes its SHA-256 (the code itself is
 // never sent, stored or put in the address), loads <data-dir><hash>.json and shows the counts the
 // nightly job of the Adminva site wrote there. Copy lives in the page (data-* attributes); figures
-// are formatted in the page's language. Without this script the page says it needs JavaScript.
+// are formatted in the page's language. A personal view (counts.personal, D99) takes the titles of
+// its data-personal attributes. Without this script the page says it needs JavaScript.
 // Loaded after site.js on the two follow-up pages; its pure helpers are window.CadencePortal.
 
 const HASH_ALGORITHM = 'SHA-256';
@@ -34,7 +35,12 @@ function readCounts(value) {
   if (!value || value.version !== DATA_VERSION || Number.isNaN(Date.parse(value.updatedAt)) || !COUNT_FIELDS.every((k) => isCount(value[k]))) {
     return null;
   }
-  return value;
+  return value.personal === undefined || value.personal === true ? value : null;
+}
+
+/** The text a label shows: its data-personal copy for a personal view, its own text otherwise. */
+function labelFor(label, personal) {
+  return personal ? label.personal : label.text;
 }
 
 function money(cents, lang) {
@@ -68,6 +74,9 @@ async function load(dir, code) {
 /* The locale of the figures (data-locale): "en-CA" writes $14.30, where "en" would write CA$14.30. */
 function show(part, counts) {
   const lang = part.locale;
+  for (const label of part.labels) {
+    label.el.textContent = labelFor(label, counts.personal === true);
+  }
   for (const name of FIGURES) {
     part.result.querySelector(`[data-figure="${name}"]`).textContent = new Intl.NumberFormat(lang).format(counts[name]);
   }
@@ -90,6 +99,7 @@ function wirePortal(form) {
     result: document.querySelector('[data-result]'),
     title: document.querySelector('[data-result-title]'),
     locale: form.dataset.locale || document.documentElement.lang,
+    labels: [...document.querySelectorAll('[data-personal]')].map((el) => ({ el, text: el.textContent, personal: el.dataset.personal })),
   };
   document.querySelectorAll('[data-nojs]').forEach((el) => { el.hidden = true; });
   form.hidden = false;
@@ -119,7 +129,7 @@ function wirePortal(form) {
   });
 }
 
-window.CadencePortal = { normalizeCode, toHex, readCounts, hashOf };
+window.CadencePortal = { normalizeCode, toHex, readCounts, hashOf, labelFor };
 
 if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {

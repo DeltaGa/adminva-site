@@ -22,6 +22,8 @@ const KEY = /^[A-Z0-9]+(?:-[A-Z0-9]+)*$/;
 const HASH = /^[0-9a-f]{64}$/;
 /** Business rule of the partnership: 1,30 $ per net pre-order, paid at launch (D93). */
 export const SHARE_CENTS_PER_NET = 130;
+/** A personal rebate: 25 % of the pre-order price (6,49 $), rounded down to the cent (D99). */
+const PERSONAL_CENTS_PER_NET = 162;
 export const DATA_VERSION = 1;
 const STRIPE_SESSIONS = 'https://api.stripe.com/v1/checkout/sessions';
 const STRIPE_PAGE_SIZE = 100;
@@ -32,10 +34,18 @@ const PAID = 'paid';
 const KEY_IN_TEXT = /\b[rs]k_(?:live|test)_[A-Za-z0-9*]+/g;
 
 /** @typedef {{ confirmed: number, refunded: number }} Tally */
+/** @typedef {{ of: string, centsPerNet: number }} View */
 /**
  * @typedef {{ version: number, updatedAt: string, confirmed: number, refunded: number, net: number,
- *   centsPerNet: number, shareCents: number }} CountsFile
+ *   centsPerNet: number, shareCents: number, personal?: true }} CountsFile
  */
+/**
+ * The personal follow-up views (D99): a key and a code of their own, so that the code of the
+ * association never shows the rebate; the counts are those of the association `of`, at their own rate.
+ * @type {Map<string, View>}
+ */
+export const PERSONAL_VIEWS = new Map([['AENUM-PERSO', { of: 'AENUM', centsPerNet: PERSONAL_CENTS_PER_NET }]]);
+const NO_COUNT = Object.freeze({ confirmed: 0, refunded: 0 });
 /** @typedef {(url: string, init: { headers: Record<string, string>, signal?: AbortSignal }) => Promise<{ ok: boolean, status: number, json: () => Promise<unknown> }>} Fetch */
 
 /**
@@ -144,12 +154,27 @@ function isRefunded(session) {
 
 /**
  * Pre-orders per association: confirmed (paid), and among them refunded. Sessions are counted once
- * by id; unpaid ones and references that name no known association are left out. O(n).
+ * by id; unpaid ones and references that name no known association are left out. A followed
+ * personal view (PERSONAL_VIEWS) gets a copy of the counts of its association, followed or not,
+ * and never a session of its own. O(n).
  * @param {Iterable<any>} sessions
  * @param {Set<string>} keys the associations followed
  * @returns {Map<string, Tally>} every followed key, zero when it has none
  */
 export function tally(sessions, keys) {
+  /** @param {string} key */
+  const countedAs = (key) => PERSONAL_VIEWS.get(key)?.of ?? key;
+  const counts = countSessions(sessions, new Set([...keys].map(countedAs)));
+  return new Map([...keys].map((key) => [key, { ...(counts.get(countedAs(key)) ?? NO_COUNT) }]));
+}
+
+/**
+ * The counts of the paid sessions whose reference names one of `keys`.
+ * @param {Iterable<any>} sessions
+ * @param {Set<string>} keys
+ * @returns {Map<string, Tally>}
+ */
+function countSessions(sessions, keys) {
   const counts = new Map([...keys].map((key) => [key, { confirmed: 0, refunded: 0 }]));
   const seen = new Set();
   for (const session of sessions) {
@@ -169,26 +194,26 @@ export function tally(sessions, keys) {
 }
 
 /**
- * The data file of one association.
+ * The data file of one association, or of a personal view (its rate, and `personal: true`).
  * @param {Tally} count
  * @param {string} updatedAt ISO instant of the change
+ * @param {View} [view] PERSONAL_VIEWS.get(key); absent for an association
  * @returns {CountsFile}
  */
-export function countsFile(count, updatedAt) {
+export function countsFile(count, updatedAt, view) {
   const net = count.confirmed - count.refunded;
-  return {
-    version: DATA_VERSION,
-    updatedAt,
-    confirmed: count.confirmed,
-    refunded: count.refunded,
-    net,
-    centsPerNet: SHARE_CENTS_PER_NET,
-    shareCents: net * SHARE_CENTS_PER_NET,
-  };
+  const centsPerNet = view?.centsPerNet ?? SHARE_CENTS_PER_NET;
+  /** @type {CountsFile} */
+  const file = { version: DATA_VERSION, updatedAt, confirmed: count.confirmed, refunded: count.refunded, net, centsPerNet, shareCents: net * centsPerNet };
+  if (view) {
+    file.personal = true;
+  }
+  return file;
 }
 
 /**
- * A data file as read back, or null when its shape is not the one this module writes.
+ * A data file as read back, or null when its shape is not the one this module writes
+ * (`personal` is absent, as in the files written before D99, or true).
  * @param {string} text
  * @returns {CountsFile | null}
  */
@@ -205,12 +230,15 @@ export function readCounts(text) {
   if (value?.version !== DATA_VERSION || typeof value.updatedAt !== 'string' || !numbers.every((k) => isCount(value[k]))) {
     return null;
   }
+  if (value.personal !== undefined && value.personal !== true) {
+    return null;
+  }
   return value;
 }
 
 /** @param {CountsFile} a @param {CountsFile} b */
 function sameCounts(a, b) {
-  return a.confirmed === b.confirmed && a.refunded === b.refunded && a.centsPerNet === b.centsPerNet;
+  return a.confirmed === b.confirmed && a.refunded === b.refunded && a.centsPerNet === b.centsPerNet && a.personal === b.personal;
 }
 
 /**
@@ -223,7 +251,7 @@ function sameCounts(a, b) {
 export function nextFiles({ mapping, tallies, existing, now }) {
   const files = [];
   for (const [key, hash] of mapping) {
-    const next = countsFile(tallies.get(key) ?? { confirmed: 0, refunded: 0 }, now);
+    const next = countsFile(tallies.get(key) ?? NO_COUNT, now, PERSONAL_VIEWS.get(key));
     const before = readCounts(existing.get(hash) ?? '');
     if (before && sameCounts(before, next)) {
       continue;
